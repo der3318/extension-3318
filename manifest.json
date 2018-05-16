@@ -1,0 +1,41 @@
+{
+	"manifest_version": 2,
+	"icons": {
+		"128": "imgs/ditto.jpg"
+	},
+	"description": "Extension for Der and Banbi / Mapping Esc to Gmail",
+	"browser_action": {
+		"default_icon": "imgs/popup.png",
+		"default_popup": "popup.html",
+		"default_title": "show page info & history"
+	},
+	"content_scripts": [
+		{
+			"matches": [
+				"http://*/*",
+				"https://*/*"
+			],
+			"js": [
+				"content.js"
+			],
+			"run_at": "document_end"
+		}
+	],
+	"background": {
+		"scripts": ["background.js"]
+	},
+	"permissions": [
+	   "tabs", 
+	   "<all_urls>",
+	   "identity",
+	   "identity.email",
+	   "storage",
+	   "notifications",
+	   "http://SERVER-DOMAIN/*"
+	],
+	"content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'",
+	"name": "Extension No.3318",
+	"version": "1.0.7",
+	"update_url": "http://SERVER-DOMAIN/extension_3318_updates.xml",
+	"homepage_url": "http://der3318a.herokuapp.com"
+}
